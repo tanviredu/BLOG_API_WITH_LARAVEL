@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+### we can route with this web.php
+### if you use the post request then you have to use the 
+### post request
+Route::get('/hello',function(){
+    return "hello world";
+});
