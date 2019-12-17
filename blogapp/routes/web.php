@@ -32,12 +32,23 @@ Route::get('/about',function(){
 
 ## sending request with inside the 
 ## the pages directory
-#Route::get('/contact',function(){
-#    return view('pages.contact');
-#});
+Route::get('/contact',function(){
+    return view('pages.contact');
+});
+
+## sending the value with the parameter
+
+
+## sending the template with the 
+## value
+Route::get('/datapass',function(){
+    return view("pages.datapass",['chanel'=>'value']);
+});
+
 
 ### setting up the prefix
-
+## this is adding prefix before every route
+## make life easy
 Route::prefix('mydomain')->group(function(){
 
 Route::get('/contact',function(){
