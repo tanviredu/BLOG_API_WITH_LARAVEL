@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home','HomeController@get');
+
+
+Route::get('/about','AboutController@get');
 
 ### we can route with this web.php
 ### if you use the post request then you have to use the 
