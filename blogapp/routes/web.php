@@ -36,6 +36,33 @@ Route::get('/contact',function(){
     return view('pages.contact');
 });
 
+## now we make a agecontact route
+## but first it goes through the middleware
+## then if true it goes to the view
+
+Route::get('/agecontact',function(){
+    return view('pages.contact');
+})->middleware('age');
+
+### this means if the middle ware is true then you can 
+### go to the pages.contact
+## but if it is false then the middleware will send it 
+## to the home which is written in the middleware
+## it send to the home so you have to make a Route for
+## the home page
+
+## this is how you can add any middlware with the
+## route
+## you can add any type of controller 
+## first make it then register it then call it
+Route::get('home',function(){
+    return "this is the home page"; 
+});
+
+
+
+
+
 ## sending the value with the parameter
 
 
