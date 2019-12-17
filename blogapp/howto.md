@@ -16,3 +16,12 @@
     you can fetch the database information
     and send send it to the controller with this
 
+3) more route with laravel
+    to do that lest go to the main default page and 
+    make a route for the total link
+
+    there are three different way to naviage from page to page
+    which is also the route
+    1)url
+    2)URL::to
+    3)route('<name>')    ## this is named route
