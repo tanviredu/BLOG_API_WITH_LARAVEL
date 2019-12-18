@@ -25,3 +25,21 @@
     1)url
     2)URL::to
     3)route('<name>')    ## this is named route
+
+4) we will learn about template on the way
+
+5) landling the static file
+    first create a folder inside the 'public' directory
+    then copy all your asset to the frontend css,js,img everythinh
+
+    now for linking you link like that
+
+    from this
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    to that
+    <link href="{{asset('frontend/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
+and you are good to go
+and make a rouyte for the page

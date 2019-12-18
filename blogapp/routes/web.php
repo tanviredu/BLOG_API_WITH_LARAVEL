@@ -12,36 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/home','HomeController@get');
+Route::get('writepost','WritePostController@WritePost')->name('write.post');
+Route::get('add/category','AddCategoriesController@AddCategory')->name('add.category');
+Route::post('add/category','AddCategoriesController@storeCategory')->name('store.category');
+Route::get('all/category','AddCategoriesController@AllCategory')->name('all.category');
 
-
-Route::get('/about','AboutController@get');
-
-### we can route with this web.php
-### if you use the post request then you have to use the 
-### post request
-## this function will return the hello world
-Route::get('/hello',function(){
-    return "hello world";
-});
-
-
-#Route::get('/about',function(){
-#    ## we can use the view for the sending template
-#    return view('about');
-#});
-
-## here we will use the controller 
-## to view this same template
-## up to this point we directly send the view
-## now we are sending the same thing with the help of
-## the controller
-
-
-Route::get('/contact','HelloController@get');
-Route::get('/contactadmin','HelloController@getForAdmin');
 
 
