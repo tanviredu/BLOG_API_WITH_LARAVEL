@@ -19,6 +19,8 @@ Route::get('writepost','WritePostController@WritePost')->name('write.post');
 Route::get('add/category','AddCategoriesController@AddCategory')->name('add.category');
 Route::post('add/category','AddCategoriesController@storeCategory')->name('store.category');
 Route::get('all/category','AddCategoriesController@AllCategory')->name('all.category');
+Route::post('save/post','WritePostController@SavePost')->name('save.post');
+
 
 // this is not a  named route
 Route::get('delete/category/{category_id}','AddCategoriesController@destroy');

@@ -14,11 +14,12 @@
             <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
             <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
             <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-            <form name="sentMessage" id="contactForm" novalidate>
+          <form action="{{route('save.post')}}" method="POST">
+            @csrf
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Post Title</label>
-                  <input type="text" class="form-control" placeholder="Post Title" id="name">
+                  <input type="text" class="form-control" name="title" placeholder="Post Title" id="name">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -27,9 +28,10 @@
                     <div class="form-group floating-label-form-group controls">
                       <label>Category</label>
                       <select class="form-control" name="category_id">
-                            <option>this is the first option</option>
-                            <option>this is the second option</option>
+                        @foreach($categories as $row)
+                      <option value="{{$row->id}}">{{$row->name}}</option>
 
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -37,7 +39,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Post Image</label>
-                  <input type="file" class="form-control">
+                  <input type="file" class="form-control" name="image">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>
@@ -45,7 +47,7 @@
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls">
                   <label>Post Details</label>
-                  <textarea rows="5" class="form-control" placeholder="Post Detail"></textarea>
+                  <textarea rows="5" class="form-control" name="details" placeholder="Post Detail"></textarea>
                   <p class="help-block text-danger"></p>
                 </div>
               </div>

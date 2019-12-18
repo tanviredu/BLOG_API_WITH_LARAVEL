@@ -81,8 +81,8 @@ class AddCategoriesController extends Controller
 
     function view($id){
         $category = DB::table('categories')->where('id',$id)->first();
-        return response()->json($category);
-
+        return view('posts.view',compact('category'));
+        //return response()->json($category);
     }
 }
 
