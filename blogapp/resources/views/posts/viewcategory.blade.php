@@ -16,10 +16,10 @@
 
 
             <div class="container container-fluid">
-                    <h2 class="post-title"><p>Post Name:{{$post->title}} </p>
-                        <img src="{{URL::to($post->image)}}" height="340px"; >
+                    <h2 class="post-title"><p>Category Name:{{$category->name}} </p>
+
                     </h2>
-                    <p>Post Details: {{$post->details}} </p>
+                    <p>Created at: {{$category->created_at}} </p>
 
 
             </div>
