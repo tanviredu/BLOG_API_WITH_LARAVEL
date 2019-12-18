@@ -12,12 +12,21 @@
 */
 
 use App\Http\Controllers\indexController;
+use Illuminate\Support\Facades\URL;
 
 // Route::get('/', function () {
 //     return view('index');
 // });
+Route::get('/', function () {
+    return redirect('/login');
+});
+Auth::routes();
 
-Route::get('/','indexController@index');
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/','indexController@index');
+Route::get('/home','indexController@index');
+Route::get('/about','AboutContactController@about');
+Route::get('/contact','AboutContactController@contact');
 
 Route::get('writepost','WritePostController@WritePost')->name('write.post');
 Route::get('add/category','AddCategoriesController@AddCategory')->name('add.category');
@@ -37,3 +46,7 @@ Route::get('delete/post/{post_id}','WritePostController@destroy');
 
 
 
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
