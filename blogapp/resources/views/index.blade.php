@@ -4,21 +4,23 @@
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
 
-            @foreach($posts as $post)
+            @foreach($post as $row)
             <div class="post-preview">
               <a href="post.html">
                 <h2 class="post-title">
-                  {{$post->title}}
+                  {{$row->title}}
                 </h2>
-            <img src="{{URL::to($post->image)}}" style="height:300px;" >
+            <img src="{{URL::to($row->image)}}" style="height:300px;" >
               </a>
               <p class="post-meta">Category
-              <a href="#">{{$post->name}}</a>
+              <a href="#">{{$row->name}}</a>
               <hr>
-               {{$post->details}}</p>
+               {{$row->details}}</p>
             </div>
             <hr>
             @endforeach
+            {{-- you cant use the {{post->links}} its depricated --}}
+            {!! $post->render() !!}
              <!-- Pager -->
             <div class="clearfix">
               <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>

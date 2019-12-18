@@ -9,8 +9,8 @@ class indexController extends Controller
     function index(){
 
         //fetch the data first
-        $posts = DB::table('posts')->join('categories','posts.category_id','categories.id')->select('posts.*','categories.slug','categories.name')->get();
+        $post = DB::table('posts')->join('categories','posts.category_id','categories.id')->select('posts.*','categories.slug','categories.name')->paginate(3);
         //return response()->json($posts);
-        return view('index',compact('posts'));
+        return view('index',compact('post'));
     }
 }
