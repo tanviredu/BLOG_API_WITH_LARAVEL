@@ -45,6 +45,7 @@ class AddCategoriesController extends Controller
             );
             return Redirect()->back()->with($notification);
         }
+
     }
 
 
@@ -55,6 +56,33 @@ class AddCategoriesController extends Controller
         $categories =DB::table('categories')->get();
         //return response()->json($categories);
         return view('posts.allcategories',compact('categories'));
+    }
+
+    function destroy($id){
+        #return response()->json($id);
+        // delete the data usin  the id
+        $category = DB::table('categories')->where('id',$id)->delete();
+        //return response()->json($category);
+        if($category){
+            $notification = array(
+                "message"=>"Successfully Deleted",
+                "alert-type"=>"success"
+            );
+            return Redirect()->back()->with($notification);
+        }else{
+            $notification = array(
+                "message"=>"Something Went Wrong",
+                "alert-type"=>"error"
+            );
+            return Redirect()->back()->with($notification);
+        }
+
+    }
+
+    function view($id){
+        $category = DB::table('categories')->where('id',$id)->first();
+        return response()->json($category);
+
     }
 }
 

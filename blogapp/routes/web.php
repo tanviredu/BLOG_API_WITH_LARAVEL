@@ -20,5 +20,10 @@ Route::get('add/category','AddCategoriesController@AddCategory')->name('add.cate
 Route::post('add/category','AddCategoriesController@storeCategory')->name('store.category');
 Route::get('all/category','AddCategoriesController@AllCategory')->name('all.category');
 
+// this is not a  named route
+Route::get('delete/category/{category_id}','AddCategoriesController@destroy');
+Route::get('view/category/{category_id}','AddCategoriesController@view');
+
+
 
 
